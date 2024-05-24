@@ -1,0 +1,239 @@
+#inputContainer,
+#inputText,
+.button,
+body,
+html {
+  position: relative;
+}
+.modal,
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+}
+h1,
+h2 {
+  text-align: center;
+  padding-top: 15px;
+}
+#inputContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#inputText {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #000;
+  margin: 10px;
+  outline: none;
+  padding: 10px;
+  resize: none;
+}
+button:hover {
+  background-color: #45a049;
+}
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: #4caf50;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+}
+.button__text {
+  font-weight: 500;
+  color: #fff;
+  transition: 0.2s;
+}
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+.button--loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: 1s infinite button-loading-spinner;
+}
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  min-height: calc(100vh - 360px);
+}
+#result p {
+  padding-bottom: 10px;
+}
+.highlight {
+  background-color: #ff0;
+}
+.match-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.match {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  flex: 1 1 100%;
+  animation: 0.5s ease-in fadeIn;
+}
+.match a {
+  color: #007bff;
+  text-decoration: none;
+}
+.match pre {
+  white-space: pre-wrap;
+}
+.match p {
+  word-break: break-all;
+}
+@media (max-width: 768px) {
+  #result {
+    min-height: calc(100vh - 360px);
+  }
+  .match {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  #result {
+    min-height: calc(100vh - 360px);
+  }
+  .match {
+    max-width: 100%;
+  }
+}
+@media (max-width: 360px) {
+  #result {
+    min-height: calc(100vh - 360px);
+  }
+  .match {
+    max-width: 100%;
+  }
+}
+#errorModal {
+  display: none;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  width: 80%;
+  max-width: 500px;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.close {
+  color: #000;
+  float: right;
+  font-size: 28px;
+  font-weight: 700;
+}
+.close:focus,
+.close:hover {
+  opacity: 0.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 5px 16px;
+  background-color: #5cb85c;
+  font-size: 16px;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.modal-header h2 {
+  padding-bottom: 10px;
+}
+.modal-body {
+  padding: 20px 16px;
+  text-align: left;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.site-footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding: 5px;
+  border-top: 1px solid #ccc;
+  color: #000;
+  font-size: 14px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.floating-button {
+  position: absolute;
+  background-color: #4caf50;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
